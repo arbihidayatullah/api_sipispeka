@@ -110,12 +110,14 @@ class JadwalController extends Controller
 
         ]);
 
-        $jadwal = Jadwal::whereId($request->input('id'))->update([
+        $jadwal = Jadwal::find($id);
+        $jadwal->update([
             'tanggal' => $request->input('tanggal'),
             'kategori' => $request->input('kategori'),
             'agenda' => $request->input('agenda'),
             'keterangan' => $request->input('keterangan'),
         ]);
+        $jadwal->save();
 
         if ($jadwal) {
             return response()->json([

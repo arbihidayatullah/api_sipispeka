@@ -106,11 +106,13 @@ class PelayananController extends Controller
 
         ]);
 
-        $pelayanan = Pelayanan::whereId($request->input('id'))->update([
+        $pelayanan = Pelayanan::find($id);
+        $pelayanan->update([
             'nama' => $request->input('nama'),
             'gambar' => $request->input('gambar'),
             'iks_id' => $request->input('iks_id'),
         ]);
+        $pelayanan->save();
 
         if ($pelayanan) {
             return response()->json([

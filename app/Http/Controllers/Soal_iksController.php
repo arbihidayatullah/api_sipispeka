@@ -60,9 +60,11 @@ class Soal_iksController extends Controller
 
         ]);
 
-        $soal_iks = Soal_iks::whereId($request->input('id'))->update([
+        $soal_iks = Soal_iks::find($id);
+        $soal_iks->update([
             'soal' => $request->input('soal'),
         ]);
+        $soal_iks->save();
 
         if ($soal_iks) {
             return response()->json([

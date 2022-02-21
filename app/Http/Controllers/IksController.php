@@ -114,13 +114,15 @@ class IksController extends Controller
 
         ]);
 
-        $iks = Iks::whereId($request->input('id'))->update([
+        $iks = Iks::find($id);
+        $iks->update([
             'nilai' => $request->input('nilai'),
             'soal_id' => $request->input('soal_id'),
             'jawaban_id' => $request->input('jawaban_id'),
             'users_id' => $request->input('users_id'),
             'keterangan_id' => $request->input('keterangan_id'),
         ]);
+        $iks->save();
 
         if ($iks) {
             return response()->json([

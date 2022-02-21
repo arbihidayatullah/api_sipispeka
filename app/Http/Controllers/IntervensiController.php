@@ -110,12 +110,14 @@ class IntervensiController extends Controller
 
         ]);
 
-        $intervensip = Intervensi::whereId($request->input('id'))->update([
+        $intervensip = Intervensi::find($id);
+        $intervensip->update([
             'intervensi' => $request->input('intervensi'),
             'keterangan' => $request->input('keterangan'),
             'order_pelayanans_id' => $request->input('order_pelayanans_id'),
             'order_konsultasis_id' => $request->input('order_konsultasis_id'),
         ]);
+        $intervensip->save();
 
         if ($intervensip) {
             return response()->json([

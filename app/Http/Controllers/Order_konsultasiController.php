@@ -107,11 +107,13 @@ class Order_konsultasiController extends Controller
 
         ]);
 
-        $order_k = Order_konsultasi::whereId($request->input('id'))->update([
+        $order_k = Order_konsultasi::find($id);
+        $order_k->update([
             'keluhan' => $request->input('keluhan'),
             'users_id' => $request->input('users_id'),
             'pelayanans_id' => $request->input('pelayanans_id'),
         ]);
+        $order_k->save();
 
         if ($order_k) {
             return response()->json([

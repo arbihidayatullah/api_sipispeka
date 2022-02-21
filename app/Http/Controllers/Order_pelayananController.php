@@ -106,11 +106,13 @@ class Order_pelayananController extends Controller
 
         ]);
 
-        $order_p = Order_pelayanan::whereId($request->input('id'))->update([
+        $order_p = Order_pelayanan::find($id);
+        $order_p->update([
             'keluhan' => $request->input('keluhan'),
             'users_id' => $request->input('users_id'),
             'pelayanans_id' => $request->input('pelayanans_id'),
         ]);
+        $order_p->save();
 
         if ($order_p) {
             return response()->json([

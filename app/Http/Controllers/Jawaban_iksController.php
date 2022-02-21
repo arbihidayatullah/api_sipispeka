@@ -70,9 +70,11 @@ class Jawaban_iksController extends Controller
 
         ]);
 
-        $jawaban_iks = Jawaban_iks::whereId($request->input('id'))->update([
+        $jawaban_iks = Jawaban_iks::find($id);
+        $jawaban_iks->update([
             'jawaban' => $request->input('jawaban'),
         ]);
+        $jawaban_iks->save();
 
         if ($jawaban_iks) {
             return response()->json([

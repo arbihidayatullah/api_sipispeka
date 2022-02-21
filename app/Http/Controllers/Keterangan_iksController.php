@@ -106,11 +106,13 @@ class Keterangan_iksController extends Controller
 
         ]);
 
-        $keterangan = Keterangan_iks::whereId($request->input('id'))->update([
+        $keterangan = Keterangan_iks::find($id);
+        $keterangan->update([
             'indeks' => $request->input('indeks'),
             'warna' => $request->input('warna'),
 
         ]);
+        $keterangan->save();
 
         if ($keterangan) {
             return response()->json([

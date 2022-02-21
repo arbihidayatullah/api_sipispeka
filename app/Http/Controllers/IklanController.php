@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Iklan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class IklanController extends Controller
 {
@@ -98,17 +99,32 @@ class IklanController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // $deskripsi = $request->deskripsi;
+        // $gambar = $request->gambar;
+
+        // $iklan = Iklan::find($id);
+        // $iklan->deskripsi = $deskripsi;
+        // $iklan->gambar = $gambar;
+        // $iklan->save();
+
+        // return response()->json([
+        //     'status' => 'success',
+        //     'message' => 'update telah berhasil',
+        //     'iklan' => $iklan
+        // ]);
         $iklan = Iklan::make($request->all(), [
             'deskripsi' => 'required',
             'gambar' => 'required',
 
         ]);
 
-        $iklan = Iklan::whereId($request->input('id'))->update([
+        $iklan = Iklan::find($id);
+        $iklan->update([
             'deskripsi' => $request->input('deskripsi'),
             'gambar' => $request->input('gambar'),
 
         ]);
+        $iklan->save();
 
         if ($iklan) {
             return response()->json([

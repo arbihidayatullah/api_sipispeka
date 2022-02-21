@@ -81,9 +81,11 @@ class RoleController extends Controller
 
         ]);
 
-        $role = Role::whereId($request->input('id'))->update([
+        $role = Role::find($id);
+        $role->update([
             'nama' => $request->input('nama'),
         ]);
+        $role->save();
 
         if ($role) {
             return response()->json([
