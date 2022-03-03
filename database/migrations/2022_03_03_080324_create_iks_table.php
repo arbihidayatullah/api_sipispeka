@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJadwalTable extends Migration
+class CreateIksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateJadwalTable extends Migration
      */
     public function up()
     {
-        Schema::create('jadwals', function (Blueprint $table) {
+        Schema::create('iks', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('tanggal');
-            $table->string('kategori');
-            $table->string('agenda');
-            $table->string('keterangan');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateJadwalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwal');
+        Schema::dropIfExists('iks');
     }
 }

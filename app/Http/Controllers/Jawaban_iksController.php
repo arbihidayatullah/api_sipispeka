@@ -35,13 +35,21 @@ class Jawaban_iksController extends Controller
     {
 
         $this->validate($request, [
-            'jawaban' => 'required'
+            'jawaban' => 'required',
+            'soal_iks_id' => 'required',
+            'iks_id' => 'required',
+
         ]);
 
-        $jawaban_iks = $request->input('jawaban');
+        $jawaban = $request->input('jawaban');
+        $soal_iks_id = $request->input('soal_iks_id');
+        $iks_id = $request->input('iks_id');
 
         $jawaban_iks = new Jawaban_iks([
-            'jawaban' => $jawaban_iks
+            'jawaban' => $jawaban,
+            'soal_iks_id' => $soal_iks_id,
+            'iks_id' => $iks_id,
+
         ]);
         $jawaban_iks->save();
 
@@ -67,12 +75,16 @@ class Jawaban_iksController extends Controller
         //
         $jawaban_iks = Jawaban_iks::make($request->all(), [
             'jawaban' => 'required',
+            'soal_iks_id' => 'required',
+            'iks_id' => 'required',
 
         ]);
 
         $jawaban_iks = Jawaban_iks::find($id);
         $jawaban_iks->update([
             'jawaban' => $request->input('jawaban'),
+            'soal_iks_id' => $request->input('soal_iks_id'),
+            'iks_id' => $request->input('iks_id'),
         ]);
         $jawaban_iks->save();
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Role;
 use Illuminate\Http\Request;
 
+
 class RoleController extends Controller
 {
     /**
@@ -36,13 +37,13 @@ class RoleController extends Controller
     {
         //
         $this->validate($request, [
-            'nama' => 'required'
+            'role_name' => 'required'
         ]);
 
-        $role = $request->input('nama');
+        $role = $request->input('role_name');
 
         $role = new Role([
-            'nama' => $role
+            'role_name' => $role
         ]);
         $role->save();
 

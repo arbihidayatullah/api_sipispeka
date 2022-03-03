@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeteranganIksTable extends Migration
+class CreateNilaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateKeteranganIksTable extends Migration
      */
     public function up()
     {
-        Schema::create('keterangan_iks', function (Blueprint $table) {
+        Schema::create('nilais', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('indeks');
-            $table->string('warna');
+            $table->integer('nilai_iks');
+            $table->integer('iks_id')->unsigned();
+            $table->foreign('iks_id')->references('id')->on('iks');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateKeteranganIksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keterangan_iks');
+        Schema::dropIfExists('nilais');
     }
 }

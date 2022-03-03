@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Model\Soal_iks;
-use SoapVar;
+
 
 class Soal_iksController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $soal_iks = Soal_iks::all();
 

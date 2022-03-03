@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJawabanIksTable extends Migration
+class CreateDesasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateJawabanIksTable extends Migration
      */
     public function up()
     {
-        Schema::create('jawaban_iks', function (Blueprint $table) {
+        Schema::create('desas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('jawaban');
+            $table->string('nama_desa');
+            $table->integer('kecamatan_id')->unsigned();
+            $table->foreign('kecamatan_id')->references('id')->on('kecamatans');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateJawabanIksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jawaban_iks');
+        Schema::dropIfExists('desas');
     }
 }

@@ -45,25 +45,28 @@ class Keterangan_iksController extends Controller
     {
         //
         $this->validate($request, [
-            'indeks' => 'required',
+            'keterangan' => 'required',
             'warna' => 'required',
+            'nilai_id' => 'required',
         ]);
 
-        $indeks = $request->input('indeks');
+        $keterangan = $request->input('keterangan');
         $warna = $request->input('warna');
+        $nilai_id = $request->input('nilai_id');
 
 
-        $keterangan = new Keterangan_iks([
-            'indeks' => $indeks,
+        $keterangan_iks = new Keterangan_iks([
+            'keterangan' => $keterangan,
             'warna' => $warna,
+            'nilai_id' => $nilai_id,
 
         ]);
-        $keterangan->save();
+        $keterangan_iks->save();
 
         return response()->json([
             'status' => 'success',
             'message' => 'input data keterangan iks',
-            'jawaban' => $keterangan
+            'jawaban' => $keterangan_iks
         ]);
     }
 
@@ -99,22 +102,24 @@ class Keterangan_iksController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $keterangan = Keterangan_iks::make($request->all(), [
-            'indeks' => 'required',
+        $keterangan_iks = Keterangan_iks::make($request->all(), [
+            'keterangan' => 'required',
             'warna' => 'required',
+            'nilai_id' => 'required',
 
 
         ]);
 
-        $keterangan = Keterangan_iks::find($id);
-        $keterangan->update([
-            'indeks' => $request->input('indeks'),
+        $keterangan_iks = Keterangan_iks::find($id);
+        $keterangan_iks->update([
+            'keterangan' => $request->input('keterangan'),
             'warna' => $request->input('warna'),
+            'nilai_id' => $request->input('nilai_id'),
 
         ]);
-        $keterangan->save();
+        $keterangan_iks->save();
 
-        if ($keterangan) {
+        if ($keterangan_iks) {
             return response()->json([
                 'success' => true,
                 'message' => 'Keterangan Berhasil Diupdate!',

@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Soal_iks extends Model
 {
-    //
-    protected $fillable = [
-        'soal'
-    ];
+    // 
+    protected $fillable = ['soal'];
 
-    public function iks()
+    public function jawaban_iks()
     {
-        return $this->hasOne(Iks::class);
+        return $this->hasMany(Jawaban_iks::class);
     }
 }

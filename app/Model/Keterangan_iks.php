@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Keterangan_iks extends Model
 {
     //
-    protected $fillable = [
-        'indeks', 'warna'
-    ];
-    public function iks()
+    protected $with = ['nilai'];
+    protected $fillable = ['keterangan', 'warna', 'nilai_id'];
+
+    public function nilai()
     {
-        return $this->belongsTo(Iks::class);
+        return $this->belongsTo(Nilai::class);
     }
 }

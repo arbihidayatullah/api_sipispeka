@@ -14,16 +14,19 @@ class keterangan_iks extends Seeder
     {
         //
         DB::table('keterangan_iks')->insert([
-            'indeks' => 'Sehat',
-            'warna' => 'Hijau'
+            'keterangan' => 'Sehat',
+            'warna' => 'Hijau',
+            'nilai_id' => 1
         ]);
         DB::table('keterangan_iks')->insert([
-            'indeks' => 'Pra-Sehat',
-            'warna' => 'Kuning'
+            'keterangan' => 'Pra-Sehat',
+            'warna' => 'Kuning',
+            'nilai_id' => 1
         ]);
         DB::table('keterangan_iks')->insert([
-            'indeks' => 'Tidak Sehat',
-            'warna' => 'Merah'
+            'keterangan' => 'Tidak Sehat',
+            'warna' => 'Merah',
+            'nilai_id' => 1
         ]);
     }
 }

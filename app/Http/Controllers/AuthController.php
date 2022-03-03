@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\User;
 
-use App\Model\Users;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -16,7 +16,7 @@ class AuthController extends Controller
     public function index()
     {
         //
-        $user = Users::all();
+        $user = User::all();
 
         return response()->json([
             'status' => 'success',
@@ -46,35 +46,38 @@ class AuthController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'nik' =>  'required',
-            'desa' => 'required',
             'rt' => 'required',
             'rw' => 'required',
             'norumah' => 'required',
             'nohp' => 'required',
+            'nowa' => 'required',
             'password' => 'required|min:6',
-            'role_id' => 'required'
+            'role_id' => 'required',
+            'desa_id' => 'required'
         ]);
 
         $nama = $request->input('nama');
         $nik = $request->input('nik');
-        $desa = $request->input('desa');
         $rt = $request->input('rt');
         $rw = $request->input('rw');
         $norumah = $request->input('norumah');
         $nohp = $request->input('nohp');
+        $nowa = $request->input('nowa');
         $password = $request->input('password');
         $role_id = $request->input('role_id');
+        $desa_id = $request->input('desa_id');
 
-        $user = new Users([
+        $user = new User([
             'nama' => $nama,
             'nik' => $nik,
-            'desa' => $desa,
             'rt' => $rt,
             'rw' => $rw,
             'norumah' => $norumah,
             'nohp' => $nohp,
+            'nowa' => $nowa,
             'password' => bcrypt($password),
-            'role_id' => $role_id
+            'role_id' => $role_id,
+            'desa_id' => $desa_id,
         ]);
 
         if ($user->save()) {

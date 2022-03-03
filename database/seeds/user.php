@@ -16,13 +16,14 @@ class user extends Seeder
         DB::table('users')->insert([
             'nama' => 'arbi h',
             'nik' => '181818181818',
-            'desa' => 'rajabasa',
             'rw' => '1',
             'rt' => '1',
             'norumah' => '12',
             'nohp' => '0909877878',
+            'nowa' => '0810101010',
             'password' => '123456789',
-            'roles_id' => '1'
+            'role_id' => 1,
+            'desa_id' => 1
         ]);
     }
 }

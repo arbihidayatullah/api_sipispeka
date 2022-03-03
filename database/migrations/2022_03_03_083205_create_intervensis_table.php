@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIntervensiTable extends Migration
+class CreateIntervensisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,11 +16,9 @@ class CreateIntervensiTable extends Migration
         Schema::create('intervensis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('intervensi');
-            $table->text('keterangan');
-            $table->integer('order_pelayanans_id')->unsigned();
-            $table->foreign('order_pelayanans_id')->references('id')->on('order_pelayanans');
-            $table->integer('order_konsultasis_id')->unsigned();
-            $table->foreign('order_konsultasis_id')->references('id')->on('order_konsultasis');
+            $table->string('keterangan');
+            $table->integer('order_konsultasi_id')->unsigned();
+            $table->foreign('order_konsultasi_id')->references('id')->on('order_konsultasis');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateIntervensiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('intervensi');
+        Schema::dropIfExists('intervensis');
     }
 }

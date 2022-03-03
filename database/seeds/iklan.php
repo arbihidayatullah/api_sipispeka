@@ -14,23 +14,23 @@ class iklan extends Seeder
     {
         DB::table('iklans')->insert([
             'deskripsi' => '12 Indikator Keluarga Sehat',
-            'gambar' => 'images/gambar 1_Indikator PIsPK.jpg',
+            'gambar' => 'images/gambar_1_IndikatorPIsPK.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Keluarga Berencana',
-            'gambar' => 'images/Poster 2_KB.jpg',
+            'gambar' => 'images/Poster_2_KB.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Keluarga Berencana 2',
-            'gambar' => 'images/Poster 3_KB2',
+            'gambar' => 'images/Poster_3_KB2.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Keluarga Berencana Nasional',
-            'gambar' => 'images/Poster 4_KB3.jpg',
+            'gambar' => 'images/Poster_4_KB3.jpeg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Waspadai Hipertensi',
-            'gambar' => 'images/Poster5_Hipertensi1.jpg',
+            'gambar' => 'images/Poster5_Hipertensi1.png',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Mencegah Tekanan Darah Tinggi',
@@ -46,15 +46,15 @@ class iklan extends Seeder
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Ibu Melakukan Persalinan di Fasilitas Kesehatan',
-            'gambar' => 'images/Poster9_Lahir Faskes1.jpg',
+            'gambar' => 'images/Poster9_LahirFaskes1.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Menjaga Ibu Hamil dan Janin Sehat-Cerdas',
-            'gambar' => 'images/Poster10_Lahir Faskes.jpg',
+            'gambar' => 'images/Poster10_LahirFaskes.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Lindungi Ibu Hamil',
-            'gambar' => 'images/Poster11_Lahir Faskes3.jpg',
+            'gambar' => 'images/Poster11_LahirFaskes3.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Ayo Imunisasi',
@@ -66,7 +66,7 @@ class iklan extends Seeder
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'ASI Eksklusif Cegah Stunting',
-            'gambar' => 'images/Poster14_ASI1.jpg',
+            'gambar' => 'images/Poster14_ASI1.png',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => '3 Tahapan ASI',
@@ -90,7 +90,7 @@ class iklan extends Seeder
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Tuberkolosis Kebal Obat',
-            'gambar' => 'images/Poster23_TBC3.jpg',
+            'gambar' => 'images/Poster23_TBC3.png',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Kendalikan Hipertensi dengan Patuh',
@@ -98,11 +98,11 @@ class iklan extends Seeder
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Aksi Kurangi Penderita Hipertensi',
-            'gambar' => 'images/Poster27_Hipertensi3.jpg',
+            'gambar' => 'images/Poster27_Hipertensi3.png',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Gangguan Jiwa Dapat Disembuhkan',
-            'gambar' => 'images/Poster28_ODGJ1.jpg',
+            'gambar' => 'images/Poster28_ODGJ1.jpeg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => '10 Tips Merawat Diri Sehari-hari Untuk ODGJ',
@@ -110,11 +110,11 @@ class iklan extends Seeder
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Pentingnya Litersasi Kesehatan Mental',
-            'gambar' => 'images/Poster30_ODGJ3.jpg',
+            'gambar' => 'images/Poster30_ODGJ3.png',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Jangan Malu Mengatakan Saya Bukan Perokok',
-            'gambar' => 'images/Poster31_Rokok2.jpg',
+            'gambar' => 'images/Poster31_Rokok2.png',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Dilarang Merokok',
@@ -134,11 +134,11 @@ class iklan extends Seeder
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Gunakan Air Bersih',
-            'gambar' => 'images/Poster36_Air bersih1.jpg',
+            'gambar' => 'images/Poster36_Airbersih1.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Manfaat menggunakan air bersih',
-            'gambar' => 'images/Poster37_Air Bersih2.jpg',
+            'gambar' => 'images/Poster37_AirBersih2.jpg',
         ]);
         DB::table('iklans')->insert([
             'deskripsi' => 'Gunakan Jamban Sehat',

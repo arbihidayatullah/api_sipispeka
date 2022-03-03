@@ -43,20 +43,20 @@ Route::post('pelayanan', 'PelayananController@store');
 Route::post('pelayanan/{id}', 'PelayananController@update');
 Route::delete('pelayanan/{id?}', 'PelayananController@destroy');
 
-Route::get('order_pelayanan', 'Order_pelayananController@index');
-Route::post('order_pelayanan', 'Order_pelayananController@store');
-Route::post('order_pelayanan/{id}', 'Order_pelayananController@update');
-Route::delete('order_pelayanan/{id?}', 'Order_pelayananController@destroy');
+// Route::get('order_pelayanan', 'Order_pelayananController@index');
+// Route::post('order_pelayanan', 'Order_pelayananController@store');
+// Route::post('order_pelayanan/{id}', 'Order_pelayananController@update');
+// Route::delete('order_pelayanan/{id?}', 'Order_pelayananController@destroy');
 
 Route::get('order_konsultasi', 'Order_konsultasiController@index');
 Route::post('order_konsultasi', 'Order_konsultasiController@store');
 Route::post('order_konsultasi/{id}', 'Order_konsultasiController@update');
 Route::delete('order_konsultasi/{id?}', 'Order_konsultasiController@destroy');
 
-Route::get('keterangan', 'keterangan_iksController@index');
-Route::post('keterangan', 'keterangan_iksController@store');
-Route::post('keterangan/{id}', 'keterangan_iksController@update');
-Route::delete('keterangan/{id?}', 'keterangan_iksController@destroy');
+Route::get('keterangan', 'Keterangan_iksController@index');
+Route::post('keterangan', 'Keterangan_iksController@store');
+Route::post('keterangan/{id}', 'Keterangan_iksController@update');
+Route::delete('keterangan/{id?}', 'Keterangan_iksController@destroy');
 
 Route::get('jadwal', 'JadwalController@index');
 Route::post('jadwal', 'JadwalController@store');
@@ -77,3 +77,8 @@ Route::get('iklan', 'IklanController@index');
 Route::post('iklan', 'IklanController@store');
 Route::post('/iklan/{id}', 'IklanController@update');
 Route::delete('iklan/{id?}', 'IklanController@destroy');
+
+Route::get('nilai', 'NilaiController@index');
+Route::post('nilai', 'NilaiController@store');
+Route::post('/nilai/{id}', 'NilaiController@update');
+Route::delete('nilai/{id?}', 'NilaiController@destroy');

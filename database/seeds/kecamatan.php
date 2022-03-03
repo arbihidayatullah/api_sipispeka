@@ -3,7 +3,8 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class iks extends Seeder
+
+class kecamatan extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +13,10 @@ class iks extends Seeder
      */
     public function run()
     {
-        DB::table('iks')->insert([
-            'user_id' => 1,
+        //
+        DB::table('kecamatans')->insert([
+            'nama_kecamatan' => 'Raja Basa',
+            'kabupaten_id' => 1
         ]);
     }
 }

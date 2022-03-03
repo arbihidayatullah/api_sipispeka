@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Iks extends Model
 {
     //
-    protected $fillable = [
-        'nilai', 'keterangan_id', 'soal_id', 'jawaban_id', 'users_id'
-    ];
+    protected $with = ['user',];
+    // protected $with = ['user', 'jawaban_iks', 'nilai', 'pelayanan'];
+    protected $fillable = ['user_id'];
 
-    public function pelayanan()
+    public function user()
     {
-        return $this->hasOne(Pelayanan::class);
+        return $this->belongsTo(User::class);
     }
 
     public function jawaban_iks()
@@ -21,13 +21,13 @@ class Iks extends Model
         return $this->hasMany(Jawaban_iks::class);
     }
 
-    public function soal_iks()
+    public function nilai()
     {
-        return $this->hasMany(Soal_iks::class);
+        return $this->hasMany(Nilai::class);
     }
 
-    public function keterangan_iks()
+    public function pelayanan()
     {
-        return $this->hasMany(Keterangan_iks::class);
+        return $this->hasMany(Pelayanan::class);
     }
 }

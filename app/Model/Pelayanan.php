@@ -7,18 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Pelayanan extends Model
 {
     //
-    protected $fillable = [
-        'nama', 'gambar', 'iks_id'
-    ];
-
-    public function order_pelayanan()
-    {
-        return $this->hasOne(Order_pelayanan::class);
-    }
+    protected $with = ['iks', 'order_konsultasi'];
+    protected $fillable = ['nama', 'gambar', 'iks_id'];
 
     public function order_konsultasi()
     {
-        return $this->hasOne(Order_konsultasi::class);
+        return $this->hasMany(Order_konsultasi::class);
     }
 
     public function iks()

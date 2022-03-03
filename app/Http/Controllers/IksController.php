@@ -44,25 +44,25 @@ class IksController extends Controller
     {
         //
         $this->validate($request, [
-            'nilai' => 'required',
-            'soal_id' => 'required',
-            'jawaban_id' => 'required',
-            'users_id' => 'required',
-            'keterangan_id' => 'required'
+            // 'nilai' => 'required',
+            // 'soal_id' => 'required',
+            // 'jawaban_id' => 'required',
+            'user_id' => 'required',
+            // 'keterangan_id' => 'required'
         ]);
 
-        $nilai = $request->input('nilai');
-        $soal_id = $request->input('soal_id');
-        $jawaban_id = $request->input('jawaban_id');
-        $users_id = $request->input('users_id');
-        $keterangan_id = $request->input('keterangan_id');
+        // $nilai = $request->input('nilai');
+        // $soal_id = $request->input('soal_id');
+        // $jawaban_id = $request->input('jawaban_id');
+        $user_id = $request->input('user_id');
+        // $keterangan_id = $request->input('keterangan_id');
 
         $iks = new Iks([
-            'nilai' => $nilai,
-            'soal_id' => $soal_id,
-            'jawaban_id' => $jawaban_id,
-            'users_id' => $users_id,
-            'keterangan_id' => $keterangan_id,
+            // 'nilai' => $nilai,
+            // 'soal_id' => $soal_id,
+            // 'jawaban_id' => $jawaban_id,
+            'user_id' => $user_id,
+            // 'keterangan_id' => $keterangan_id,
         ]);
         $iks->save();
 
@@ -106,21 +106,21 @@ class IksController extends Controller
     {
         //
         $iks = Iks::make($request->all(), [
-            'nilai' => 'required',
-            'soal_id' => 'required',
-            'jawaban_id' => 'required',
-            'users_id' => 'required',
-            'keterangan_id' => 'required'
+            // 'nilai' => 'required',
+            // 'soal_id' => 'required',
+            // 'jawaban_id' => 'required',
+            'user_id' => 'required',
+            // 'keterangan_id' => 'required'
 
         ]);
 
         $iks = Iks::find($id);
         $iks->update([
-            'nilai' => $request->input('nilai'),
-            'soal_id' => $request->input('soal_id'),
-            'jawaban_id' => $request->input('jawaban_id'),
-            'users_id' => $request->input('users_id'),
-            'keterangan_id' => $request->input('keterangan_id'),
+            // 'nilai' => $request->input('nilai'),
+            // 'soal_id' => $request->input('soal_id'),
+            // 'jawaban_id' => $request->input('jawaban_id'),
+            'user_id' => $request->input('user_id'),
+            // 'keterangan_id' => $request->input('keterangan_id'),
         ]);
         $iks->save();
 

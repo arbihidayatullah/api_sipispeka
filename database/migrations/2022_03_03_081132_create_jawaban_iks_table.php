@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePelayananTable extends Migration
+class CreateJawabanIksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreatePelayananTable extends Migration
      */
     public function up()
     {
-        Schema::create('pelayanans', function (Blueprint $table) {
+        Schema::create('jawaban_iks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama');
-            $table->string('gambar');
+            $table->string('jawaban');
+            $table->integer('soal_iks_id')->unsigned();
+            $table->foreign('soal_iks_id')->references('id')->on('soal_iks');
             $table->integer('iks_id')->unsigned();
             $table->foreign('iks_id')->references('id')->on('iks');
             $table->timestamps();
@@ -30,6 +31,6 @@ class CreatePelayananTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelayanans');
+        Schema::dropIfExists('jawaban_iks');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class iks extends Seeder
+class nilai extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +12,10 @@ class iks extends Seeder
      */
     public function run()
     {
-        DB::table('iks')->insert([
-            'user_id' => 1,
+        //
+        DB::table('nilais')->insert([
+            'nilai_iks' => 10,
+            'iks_id' => 1,
         ]);
     }
 }

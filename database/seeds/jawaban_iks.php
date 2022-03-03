@@ -15,12 +15,21 @@ class jawaban_iks extends Seeder
         //
         DB::table('jawaban_iks')->insert([
             'jawaban' => 'Ya',
+            'soal_iks_id' => 1,
+            'iks_id' => 1,
+
         ]);
         DB::table('jawaban_iks')->insert([
             'jawaban' => 'Tidak',
+            'soal_iks_id' => 1,
+            'iks_id' => 1,
+
         ]);
         DB::table('jawaban_iks')->insert([
             'jawaban' => 'Netral',
+            'soal_iks_id' => 1,
+            'iks_id' => 1,
+
         ]);
     }
 }

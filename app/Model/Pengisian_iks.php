@@ -4,8 +4,8 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Iklan extends Model
+class Pengisian_iks extends Model
 {
     //
-    protected $fillable = ['deskripsi', 'gambar'];
+    protected $fillable = ['rule'];
 }

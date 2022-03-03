@@ -8,6 +8,12 @@ class Jadwal extends Model
 {
     //
     protected $fillable = [
-        'tanggal', 'kategori', 'judul', 'keterangan'
+        'tanggal_mulai',
+        'tanggal_selesai',
+        'lokasi',
+        'kategori',
+        'agenda',
+        'keterangan',
+
     ];
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Order_pelayanan;
+use App\Model\Nilai;
 use Illuminate\Http\Request;
 
-class Order_pelayananController extends Controller
+class NilaiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class Order_pelayananController extends Controller
     public function index()
     {
         //
-        $order_p = Order_pelayanan::all();
+        $nilai = Nilai::all();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'list data order pelayanan iks',
-            'data' => $order_p
+            'message' => 'list data nilai iks',
+            'data' => $nilai
         ]);
     }
 
@@ -44,26 +44,28 @@ class Order_pelayananController extends Controller
     {
         //
         $this->validate($request, [
-            'keluhan' => 'required',
-            'users_id' => 'required',
-            'pelayanans_id' => 'required'
+            'nilai_iks' => 'required',
+            'iks_id' => 'required',
+
         ]);
 
-        $keluhan = $request->input('keluhan');
-        $users_id = $request->input('users_id');
-        $pelayanans_id = $request->input('pelayanans_id');
+        $nilai_iks = $request->input('nilai_iks');
+        $iks_id = $request->input('iks_id');
 
-        $order_p = new Order_pelayanan([
-            'keluhan' => $keluhan,
-            'users_id' => $users_id,
-            'pelayanans_id' => $pelayanans_id,
+
+
+        $nilai = new Nilai([
+            'nilai_iks' => $nilai_iks,
+            'iks_id' => $iks_id,
+
+
         ]);
-        $order_p->save();
+        $nilai->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'input data order pelayanan iks',
-            'jawaban' => $order_p
+            'message' => 'input data nilai iks',
+            'jawaban' => $nilai
         ]);
     }
 
@@ -99,30 +101,27 @@ class Order_pelayananController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $order_p = Order_pelayanan::make($request->all(), [
-            'keluhan' => 'required',
-            'users_id' => 'required',
-            'pelayanans_id' => 'required'
-
+        $nilai = Nilai::make($request->all(), [
+            'nilai_iks' => 'required',
+            'iks_id' => 'required',
         ]);
 
-        $order_p = Order_pelayanan::find($id);
-        $order_p->update([
-            'keluhan' => $request->input('keluhan'),
-            'users_id' => $request->input('users_id'),
-            'pelayanans_id' => $request->input('pelayanans_id'),
+        $nilai = Nilai::find($id);
+        $nilai->update([
+            'nilai_iks' => $request->input('nilai_iks'),
+            'iks_id' => $request->input('iks_id'),
         ]);
-        $order_p->save();
+        $nilai->save();
 
-        if ($order_p) {
+        if ($nilai) {
             return response()->json([
                 'success' => true,
-                'message' => 'Order Pelayanan Berhasil Diupdate!',
+                'message' => 'Nilai Berhasil Diupdate!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Order Pelayanan Gagal Diupdate!',
+                'message' => 'Nilai Gagal Diupdate!',
             ], 401);
         }
     }
@@ -136,18 +135,18 @@ class Order_pelayananController extends Controller
     public function destroy($id)
     {
         //
-        $order_p = Order_pelayanan::findOrFail($id);
-        $order_p->delete();
+        $nilai = Nilai::findOrFail($id);
+        $nilai->delete();
 
-        if ($order_p) {
+        if ($nilai) {
             return response()->json([
                 'success' => true,
-                'message' => 'Order Pelayanan Berhasil Dihapus!',
+                'message' => 'Nilai Berhasil Dihapus!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Order Pelayanan Gagal Dihapus!',
+                'message' => 'Nilai Gagal Dihapus!',
             ], 400);
         }
     }
