@@ -78,13 +78,13 @@ class RoleController extends Controller
         //
         //
         $role = Role::make($request->all(), [
-            'nama' => 'required',
+            'role_name' => 'required',
 
         ]);
 
         $role = Role::find($id);
         $role->update([
-            'nama' => $request->input('nama'),
+            'role_name' => $request->input('role_name'),
         ]);
         $role->save();
 

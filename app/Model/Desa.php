@@ -9,7 +9,8 @@ class Desa extends Model
     //
     protected $with = ['kecamatan'];
     protected $fillable = [
-        'nama_desa'
+        'nama_desa',
+        'kecamatan_id'
     ];
 
     public function kecamatan()

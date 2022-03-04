@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Intervensi;
+use App\Model\Kabupaten;
 use Illuminate\Http\Request;
 
-class IntervensiController extends Controller
+class KabupatenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class IntervensiController extends Controller
     public function index()
     {
         //
-        $intervensi = Intervensi::all();
+        $kabupaten = Kabupaten::all();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'list data intervensi',
-            'data' => $intervensi
+            'message' => 'list data kabupaten',
+            'data' => $kabupaten
         ]);
     }
 
@@ -44,26 +44,23 @@ class IntervensiController extends Controller
     {
         //
         $this->validate($request, [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required'
+            'nama_kabupaten' => 'required',
+            'provinsi_id' => 'required'
         ]);
 
-        $intervensi = $request->input('intervensi');
-        $keterangan = $request->input('keterangan');
-        $order_konsultasis_id = $request->input('order_konsultasis_id');
+        $nama_kabupaten = $request->input('nama_kabupaten');
+        $provinsi_id = $request->input('provinsi_id');
 
-        $intervensip = new Intervensi([
-            'intervensi' => $intervensi,
-            'keterangan' => $keterangan,
-            'order_konsultasis_id' => $order_konsultasis_id,
+        $kabupaten = new Kabupaten([
+            'nama_kabupaten' => $nama_kabupaten,
+            'provinsi_id' => $provinsi_id
         ]);
-        $intervensip->save();
+        $kabupaten->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'input data intervensi',
-            'jawaban' => $intervensip
+            'message' => 'input data kabupaten',
+            'jawaban' => $kabupaten
         ]);
     }
 
@@ -99,30 +96,28 @@ class IntervensiController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $intervensip = Intervensi::make($request->all(), [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required',
+        $kabupaten = Kabupaten::make($request->all(), [
+            'nama_kabupaten' => 'required',
+            'provinsi_id' => 'required',
 
         ]);
 
-        $intervensip = Intervensi::find($id);
-        $intervensip->update([
-            'intervensi' => $request->input('intervensi'),
-            'keterangan' => $request->input('keterangan'),
-            'order_konsultasis_id' => $request->input('order_konsultasis_id'),
+        $kabupaten = Kabupaten::find($id);
+        $kabupaten->update([
+            'nama_kabupaten' => $request->input('nama_kabupaten'),
+            'provinsi_id' => $request->input('provinsi_id'),
         ]);
-        $intervensip->save();
+        $kabupaten->save();
 
-        if ($intervensip) {
+        if ($kabupaten) {
             return response()->json([
                 'success' => true,
-                'message' => 'Intervensi Berhasil Diupdate!',
+                'message' => 'Kabupaten Berhasil Diupdate!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Intervensi Gagal Diupdate!',
+                'message' => 'Kabupaten Gagal Diupdate!',
             ], 401);
         }
     }
@@ -136,18 +131,18 @@ class IntervensiController extends Controller
     public function destroy($id)
     {
         //
-        $intervensi = Intervensi::findOrFail($id);
-        $intervensi->delete();
+        $kabupaten = Kabupaten::findOrFail($id);
+        $kabupaten->delete();
 
-        if ($intervensi) {
+        if ($kabupaten) {
             return response()->json([
                 'success' => true,
-                'message' => 'Order Pelayanan Berhasil Dihapus!',
+                'message' => 'Kabupaten Berhasil Dihapus!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Order Pelayanan Gagal Dihapus!',
+                'message' => 'Kabupaten Gagal Dihapus!',
             ], 400);
         }
     }

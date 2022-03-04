@@ -9,7 +9,8 @@ class Kabupaten extends Model
     //
     protected $with = ['provinsi'];
     protected $fillable = [
-        'nama_kabupaten'
+        'nama_kabupaten',
+        'provinsi_id'
     ];
 
     public function kecamatan()

@@ -82,3 +82,28 @@ Route::get('nilai', 'NilaiController@index');
 Route::post('nilai', 'NilaiController@store');
 Route::post('/nilai/{id}', 'NilaiController@update');
 Route::delete('nilai/{id?}', 'NilaiController@destroy');
+
+Route::get('pengisian_iks', 'Pengisian_iksController@index');
+Route::post('pengisian_iks', 'Pengisian_iksController@store');
+Route::post('/pengisian_iks/{id}', 'Pengisian_iksController@update');
+Route::delete('pengisian_iks/{id?}', 'Pengisian_iksController@destroy');
+
+Route::get('provinsi', 'ProvinsiController@index');
+Route::post('provinsi', 'ProvinsiController@store');
+Route::post('/provinsi/{id}', 'ProvinsiController@update');
+Route::delete('provinsi/{id?}', 'ProvinsiController@destroy');
+
+Route::get('kabupaten', 'KabupatenController@index');
+Route::post('kabupaten', 'KabupatenController@store');
+Route::post('/kabupaten/{id}', 'KabupatenController@update');
+Route::delete('kabupaten/{id?}', 'KabupatenController@destroy');
+
+Route::get('kecamatan', 'KecamatanController@index');
+Route::post('kecamatan', 'KecamatanController@store');
+Route::post('/kecamatan/{id}', 'KecamatanController@update');
+Route::delete('kecamatan/{id?}', 'KecamatanController@destroy');
+
+Route::get('desa', 'DesaController@index');
+Route::post('desa', 'DesaController@store');
+Route::post('/desa/{id}', 'DesaController@update');
+Route::delete('desa/{id?}', 'DesaController@destroy');

@@ -44,19 +44,25 @@ class JadwalController extends Controller
     {
         //
         $this->validate($request, [
-            'tanggal' => 'required',
+            'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
+            'lokasi' => 'required',
             'kategori' => 'required',
             'agenda' => 'required',
             'keterangan' => 'required'
         ]);
 
-        $tanggal = $request->input('tanggal');
+        $tanggal_mulai = $request->input('tanggal_mulai');
+        $tanggal_selesai = $request->input('tanggal_selesai');
+        $lokasi = $request->input('lokasi');
         $kategori = $request->input('kategori');
         $agenda = $request->input('agenda');
         $keterangan = $request->input('keterangan');
 
         $jadwal = new Jadwal([
-            'tanggal' => $tanggal,
+            'tanggal_mulai' => $tanggal_mulai,
+            'tanggal_selesai' => $tanggal_selesai,
+            'lokasi' => $lokasi,
             'kategori' => $kategori,
             'agenda' => $agenda,
             'keterangan' => $keterangan,
@@ -103,7 +109,9 @@ class JadwalController extends Controller
     {
         //
         $jadwal = Jadwal::make($request->all(), [
-            'tanggal' => 'required',
+            'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
+            'lokasi' => 'required',
             'kategori' => 'required',
             'agenda' => 'required',
             'keterangan' => 'required'
@@ -112,7 +120,9 @@ class JadwalController extends Controller
 
         $jadwal = Jadwal::find($id);
         $jadwal->update([
-            'tanggal' => $request->input('tanggal'),
+            'tanggal_mulai' => $request->input('tanggal_mulai'),
+            'tanggal_selesai' => $request->input('tanggal_selesai'),
+            'lokasi' => $request->input('lokasi'),
             'kategori' => $request->input('kategori'),
             'agenda' => $request->input('agenda'),
             'keterangan' => $request->input('keterangan'),

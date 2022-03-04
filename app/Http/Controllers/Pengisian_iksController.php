@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Intervensi;
+use App\Model\Pengisian_iks;
 use Illuminate\Http\Request;
 
-class IntervensiController extends Controller
+class Pengisian_iksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class IntervensiController extends Controller
     public function index()
     {
         //
-        $intervensi = Intervensi::all();
+        $p_iks = Pengisian_iks::all();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'list data intervensi',
-            'data' => $intervensi
+            'message' => 'list data pengisian iks',
+            'data' => $p_iks
         ]);
     }
 
@@ -44,26 +44,20 @@ class IntervensiController extends Controller
     {
         //
         $this->validate($request, [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required'
+            'rule' => 'required'
         ]);
 
-        $intervensi = $request->input('intervensi');
-        $keterangan = $request->input('keterangan');
-        $order_konsultasis_id = $request->input('order_konsultasis_id');
+        $rule = $request->input('rule');
 
-        $intervensip = new Intervensi([
-            'intervensi' => $intervensi,
-            'keterangan' => $keterangan,
-            'order_konsultasis_id' => $order_konsultasis_id,
+        $p_iks = new Pengisian_iks([
+            'rule' => $rule
         ]);
-        $intervensip->save();
+        $p_iks->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'input data intervensi',
-            'jawaban' => $intervensip
+            'message' => 'input data rule iks',
+            'jawaban' => $p_iks
         ]);
     }
 
@@ -99,30 +93,26 @@ class IntervensiController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $intervensip = Intervensi::make($request->all(), [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required',
+        $p_iks = Pengisian_iks::make($request->all(), [
+            'rule' => 'required',
 
         ]);
 
-        $intervensip = Intervensi::find($id);
-        $intervensip->update([
-            'intervensi' => $request->input('intervensi'),
-            'keterangan' => $request->input('keterangan'),
-            'order_konsultasis_id' => $request->input('order_konsultasis_id'),
+        $p_iks = Pengisian_iks::find($id);
+        $p_iks->update([
+            'rule' => $request->input('rule'),
         ]);
-        $intervensip->save();
+        $p_iks->save();
 
-        if ($intervensip) {
+        if ($p_iks) {
             return response()->json([
                 'success' => true,
-                'message' => 'Intervensi Berhasil Diupdate!',
+                'message' => 'Rule IKS Berhasil Diupdate!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Intervensi Gagal Diupdate!',
+                'message' => 'Rule IKS Gagal Diupdate!',
             ], 401);
         }
     }
@@ -136,18 +126,18 @@ class IntervensiController extends Controller
     public function destroy($id)
     {
         //
-        $intervensi = Intervensi::findOrFail($id);
-        $intervensi->delete();
+        $p_iks = Pengisian_iks::findOrFail($id);
+        $p_iks->delete();
 
-        if ($intervensi) {
+        if ($p_iks) {
             return response()->json([
                 'success' => true,
-                'message' => 'Order Pelayanan Berhasil Dihapus!',
+                'message' => 'Rule  IKS Berhasil Dihapus!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Order Pelayanan Gagal Dihapus!',
+                'message' => 'Rule IKS Gagal Dihapus!',
             ], 400);
         }
     }

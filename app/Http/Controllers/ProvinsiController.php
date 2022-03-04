@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Intervensi;
+use App\Model\Provinsi;
 use Illuminate\Http\Request;
 
-class IntervensiController extends Controller
+class ProvinsiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class IntervensiController extends Controller
     public function index()
     {
         //
-        $intervensi = Intervensi::all();
+        $provinsi = Provinsi::all();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'list data intervensi',
-            'data' => $intervensi
+            'message' => 'list data jawaban iks',
+            'data' => $provinsi
         ]);
     }
 
@@ -44,26 +44,20 @@ class IntervensiController extends Controller
     {
         //
         $this->validate($request, [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required'
+            'nama_provinsi' => 'required'
         ]);
 
-        $intervensi = $request->input('intervensi');
-        $keterangan = $request->input('keterangan');
-        $order_konsultasis_id = $request->input('order_konsultasis_id');
+        $provinsi = $request->input('nama_provinsi');
 
-        $intervensip = new Intervensi([
-            'intervensi' => $intervensi,
-            'keterangan' => $keterangan,
-            'order_konsultasis_id' => $order_konsultasis_id,
+        $provinsi = new Provinsi([
+            'nama_provinsi' => $provinsi
         ]);
-        $intervensip->save();
+        $provinsi->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'input data intervensi',
-            'jawaban' => $intervensip
+            'message' => 'input data provinsi',
+            'jawaban' => $provinsi
         ]);
     }
 
@@ -99,30 +93,26 @@ class IntervensiController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $intervensip = Intervensi::make($request->all(), [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required',
+        $provinsi = Provinsi::make($request->all(), [
+            'nama_provinsi' => 'required',
 
         ]);
 
-        $intervensip = Intervensi::find($id);
-        $intervensip->update([
-            'intervensi' => $request->input('intervensi'),
-            'keterangan' => $request->input('keterangan'),
-            'order_konsultasis_id' => $request->input('order_konsultasis_id'),
+        $provinsi = Provinsi::find($id);
+        $provinsi->update([
+            'nama_provinsi' => $request->input('nama_provinsi'),
         ]);
-        $intervensip->save();
+        $provinsi->save();
 
-        if ($intervensip) {
+        if ($provinsi) {
             return response()->json([
                 'success' => true,
-                'message' => 'Intervensi Berhasil Diupdate!',
+                'message' => 'Provinsi Berhasil Diupdate!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Intervensi Gagal Diupdate!',
+                'message' => 'Provinsi Gagal Diupdate!',
             ], 401);
         }
     }
@@ -136,18 +126,18 @@ class IntervensiController extends Controller
     public function destroy($id)
     {
         //
-        $intervensi = Intervensi::findOrFail($id);
-        $intervensi->delete();
+        $provinsi = Provinsi::findOrFail($id);
+        $provinsi->delete();
 
-        if ($intervensi) {
+        if ($provinsi) {
             return response()->json([
                 'success' => true,
-                'message' => 'Order Pelayanan Berhasil Dihapus!',
+                'message' => 'Provinsi Berhasil Dihapus!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Order Pelayanan Gagal Dihapus!',
+                'message' => 'Provinsi Gagal Dihapus!',
             ], 400);
         }
     }

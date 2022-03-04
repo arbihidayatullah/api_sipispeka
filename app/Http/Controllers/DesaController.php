@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Intervensi;
+use App\Model\Desa;
 use Illuminate\Http\Request;
 
-class IntervensiController extends Controller
+class DesaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class IntervensiController extends Controller
     public function index()
     {
         //
-        $intervensi = Intervensi::all();
+        $desa = Desa::all();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'list data intervensi',
-            'data' => $intervensi
+            'message' => 'list data kabupaten',
+            'data' => $desa
         ]);
     }
 
@@ -44,26 +44,23 @@ class IntervensiController extends Controller
     {
         //
         $this->validate($request, [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required'
+            'nama_desa' => 'required',
+            'kecamatan_id' => 'required'
         ]);
 
-        $intervensi = $request->input('intervensi');
-        $keterangan = $request->input('keterangan');
-        $order_konsultasis_id = $request->input('order_konsultasis_id');
+        $nama_desa = $request->input('nama_desa');
+        $kecamatan_id = $request->input('kecamatan_id');
 
-        $intervensip = new Intervensi([
-            'intervensi' => $intervensi,
-            'keterangan' => $keterangan,
-            'order_konsultasis_id' => $order_konsultasis_id,
+        $desa = new Desa([
+            'nama_desa' => $nama_desa,
+            'kecamatan_id' => $kecamatan_id
         ]);
-        $intervensip->save();
+        $desa->save();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'input data intervensi',
-            'jawaban' => $intervensip
+            'message' => 'input data desa',
+            'jawaban' => $desa
         ]);
     }
 
@@ -99,30 +96,28 @@ class IntervensiController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $intervensip = Intervensi::make($request->all(), [
-            'intervensi' => 'required',
-            'keterangan' => 'required',
-            'order_konsultasis_id' => 'required',
+        $desa = Desa::make($request->all(), [
+            'nama_desa' => 'required',
+            'kecamatan_id' => 'required',
 
         ]);
 
-        $intervensip = Intervensi::find($id);
-        $intervensip->update([
-            'intervensi' => $request->input('intervensi'),
-            'keterangan' => $request->input('keterangan'),
-            'order_konsultasis_id' => $request->input('order_konsultasis_id'),
+        $desa = Desa::find($id);
+        $desa->update([
+            'nama_desa' => $request->input('nama_desa'),
+            'kecamatan_id' => $request->input('kecamatan_id'),
         ]);
-        $intervensip->save();
+        $desa->save();
 
-        if ($intervensip) {
+        if ($desa) {
             return response()->json([
                 'success' => true,
-                'message' => 'Intervensi Berhasil Diupdate!',
+                'message' => 'Desa Berhasil Diupdate!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Intervensi Gagal Diupdate!',
+                'message' => 'Desa Gagal Diupdate!',
             ], 401);
         }
     }
@@ -136,18 +131,18 @@ class IntervensiController extends Controller
     public function destroy($id)
     {
         //
-        $intervensi = Intervensi::findOrFail($id);
-        $intervensi->delete();
+        $desa = Desa::findOrFail($id);
+        $desa->delete();
 
-        if ($intervensi) {
+        if ($desa) {
             return response()->json([
                 'success' => true,
-                'message' => 'Order Pelayanan Berhasil Dihapus!',
+                'message' => 'Desa Berhasil Dihapus!',
             ], 200);
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Order Pelayanan Gagal Dihapus!',
+                'message' => 'Desa Gagal Dihapus!',
             ], 400);
         }
     }
