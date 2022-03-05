@@ -15,7 +15,7 @@ class CreateNilaisTable extends Migration
     {
         Schema::create('nilais', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nilai_iks');
+            $table->double('nilai_iks');
             $table->integer('iks_id')->unsigned();
             $table->foreign('iks_id')->references('id')->on('iks');
             $table->timestamps();
