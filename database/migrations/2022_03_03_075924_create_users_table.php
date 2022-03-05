@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->integer('rt');
             $table->integer('rw');
             $table->integer('norumah');
-            $table->integer('nohp');
-            $table->integer('nowa');
+            $table->bigInteger('nohp');
+            $table->bigInteger('nowa');
             $table->string('password');
             $table->integer('role_id')->unsigned();
             $table->foreign('role_id')->references('id')->on('roles');

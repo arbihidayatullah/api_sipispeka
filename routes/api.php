@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('user', 'AuthController@index');
-Route::post('register', 'AuthController@store');
+Route::post('login', 'AuthController@login');
+Route::post('register', 'AuthController@register');
+Route::post('adduser', 'AuthController@store');
 
 
 Route::get('soal_iks', 'Soal_iksController@index');
@@ -77,7 +79,7 @@ Route::post('iks/{id}', 'IksController@update');
 Route::delete('iks/{id?}', 'IksController@destroy');
 
 Route::get('iklan', 'IklanController@index');
-Route::post('iklan', 'IklanController@store');
+Route::post('iklan', 'IklanController@uploadImage');
 Route::post('/iklan/{id}', 'IklanController@update');
 Route::delete('iklan/{id?}', 'IklanController@destroy');
 

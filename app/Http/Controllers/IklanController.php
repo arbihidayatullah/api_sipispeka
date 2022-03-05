@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use File;
+
 use App\Model\Iklan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -42,6 +44,38 @@ class IklanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function uploadImage(Request $request)
+    {
+
+        $this->validate($request, [
+            'deskripsi' => 'required',
+            'gambar' => 'required|image:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // menyimpan data file yang diupload ke variabel $file
+        $file = $request->file('gambar');
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'images';
+        $file->move($tujuan_upload, $nama_file);
+
+
+        $iklan = Iklan::create([
+            'gambar' => $nama_file,
+            'deskripsi' => $request->deskripsi,
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'input data Iklan',
+            'jawaban' => $iklan
+        ]);
+    }
+
+
+
     public function store(Request $request)
     {
         //
@@ -148,9 +182,28 @@ class IklanController extends Controller
     public function destroy($id)
     {
         //
-        $iklan = Iklan::findOrFail($id);
-        $iklan->delete();
+        // $iklan = Iklan::findOrFail($id);
+        // $iklan->delete();
+        //--
+        $iklan = Iklan::where('id', $id)->first();
+        // File::delete('images/' . $iklan->file);
 
+        Iklan::where('id', $id)->delete();
+        //=
+        // // Ambil Data
+        // $iklan = Iklan::where('id', $id)->first();
+
+        // // Path Video Lama
+        // $iklan = public_path('images/' . $iklan->video);
+
+        // // Cek Apakah ada file videonya
+        // if(File::exists($iklan){
+        // 	// Jika File tersebut ada
+        //     // Hapus File tersebut
+        //     File::delete($iklan)
+        // }
+
+        //---------------------------------
         if ($iklan) {
             return response()->json([
                 'success' => true,
