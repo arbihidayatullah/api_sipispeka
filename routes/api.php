@@ -32,6 +32,8 @@ Route::get('jawaban_iks', 'Jawaban_iksController@index');
 Route::post('jawaban_iks', 'Jawaban_iksController@store');
 Route::post('jawaban_iks_up/{id}', 'Jawaban_iksController@update');
 Route::delete('jawaban_iks/{id?}', 'Jawaban_iksController@destroy');
+Route::get('update_iks/{user_id}', 'Jawaban_iksController@show');
+Route::delete('deletelast/{user_id}', 'Jawaban_iksController@deletelast');
 
 Route::get('role', 'RoleController@index');
 Route::post('role', 'RoleController@store');
@@ -57,6 +59,7 @@ Route::get('keterangan', 'Keterangan_iksController@index');
 Route::post('keterangan', 'Keterangan_iksController@store');
 Route::post('keterangan/{id}', 'Keterangan_iksController@update');
 Route::delete('keterangan/{id?}', 'Keterangan_iksController@destroy');
+Route::get('keterangan_user/{user_id}', 'Keterangan_iksController@show');
 
 Route::get('jadwal', 'JadwalController@index');
 Route::post('jadwal', 'JadwalController@store');

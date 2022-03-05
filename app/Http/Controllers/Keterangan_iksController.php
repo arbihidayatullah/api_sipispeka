@@ -76,9 +76,19 @@ class Keterangan_iksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-        //
+        $keterangan = Keterangan_iks::whereHas('nilai', function ($query) use ($user_id) {
+            $query->whereHas('iks', function ($query) use ($user_id) {
+                $query->where('user_id', '=', $user_id);
+            });
+        })->latest()->take(2)->get();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'data keterangan iks',
+            'data' => $keterangan
+        ]);
     }
 
     /**

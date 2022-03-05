@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Jawaban_iks;
+use App\Model\Iks;
 use Illuminate\Http\Request;
 
 class Jawaban_iksController extends Controller
@@ -124,5 +125,29 @@ class Jawaban_iksController extends Controller
                 'message' => 'Post Gagal Dihapus!',
             ], 400);
         }
+    }
+
+    public function show($user_id)
+    {
+        $iks = Iks::where('user_id', $user_id)->get()->last();
+        $jawaban_iks = Jawaban_iks::where('iks_id', $iks->id)->get();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Jawaban IKS',
+            'data' => $jawaban_iks,
+        ], 200);
+    }
+
+    public function deletelast($user_id)
+    {
+        $iks = Iks::where('user_id', $user_id)->get()->last();
+        $jawaban_iks = Jawaban_iks::where('iks_id', $iks->id)->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'IKS Terhapus',
+            'data' => $jawaban_iks,
+        ], 200);
     }
 }
