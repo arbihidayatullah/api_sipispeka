@@ -181,39 +181,16 @@ class IklanController extends Controller
      */
     public function destroy($id)
     {
-        //
-        // $iklan = Iklan::findOrFail($id);
-        // $iklan->delete();
-        //--
-        $iklan = Iklan::where('id', $id)->first();
-        // File::delete('images/' . $iklan->file);
+        $iklan = Iklan::find($id);
 
-        Iklan::where('id', $id)->delete();
-        //=
-        // // Ambil Data
-        // $iklan = Iklan::where('id', $id)->first();
+        $file_name = $iklan->images;
+        $file_path = public_path('images/');
+        unlink($file_path, $file_name);
 
-        // // Path Video Lama
-        // $iklan = public_path('images/' . $iklan->video);
+        $iklan->delete();
 
-        // // Cek Apakah ada file videonya
-        // if(File::exists($iklan){
-        // 	// Jika File tersebut ada
-        //     // Hapus File tersebut
-        //     File::delete($iklan)
-        // }
-
-        //---------------------------------
-        if ($iklan) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Iklan Berhasil Dihapus!',
-            ], 200);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Iklan Gagal Dihapus!',
-            ], 400);
-        }
+        return response()->json([
+            'status' => 'iklan berhasil dihapus'
+        ]);
     }
 }
