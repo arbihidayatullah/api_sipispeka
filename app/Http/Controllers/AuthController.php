@@ -93,6 +93,7 @@ class AuthController extends Controller
                     'message' => 'Login Success!',
                     'data' =>
                     [
+                        'id' => $row->id,
                         "nama" => $row->nama,
                         "nik" => $row->nik,
                         "rt" => $row->rt,
