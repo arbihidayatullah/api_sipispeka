@@ -98,25 +98,24 @@ class NilaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $iks_id)
     {
         //
         $nilai = Nilai::make($request->all(), [
             'nilai_iks' => 'required',
-            'iks_id' => 'required',
         ]);
 
-        $nilai = Nilai::find($id);
-        $nilai->update([
+        $nilai = Nilai::where('iks_id', $iks_id)->get();
+        $nilai[0]->update([
             'nilai_iks' => $request->input('nilai_iks'),
-            'iks_id' => $request->input('iks_id'),
         ]);
-        $nilai->save();
+        $nilai[0]->save();
 
         if ($nilai) {
             return response()->json([
                 'success' => true,
                 'message' => 'Nilai Berhasil Diupdate!',
+                'data' => $nilai
             ], 200);
         } else {
             return response()->json([
