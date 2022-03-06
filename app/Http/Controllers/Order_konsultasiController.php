@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Order_konsultasi;
+use App\Model\Pelayanan;
 use Illuminate\Http\Request;
 
 class Order_konsultasiController extends Controller
@@ -74,9 +75,16 @@ class Order_konsultasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-        //
+
+        $order_k = Order_konsultasi::where('user_id', $user_id->id)->get();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Jawaban IKS',
+            'data' => $order_k,
+        ], 200);
     }
 
     /**

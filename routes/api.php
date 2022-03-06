@@ -56,6 +56,7 @@ Route::get('order_konsultasi', 'Order_konsultasiController@index');
 Route::post('order_konsultasi', 'Order_konsultasiController@store');
 Route::post('order_konsultasi/{id}', 'Order_konsultasiController@update');
 Route::delete('order_konsultasi/{id?}', 'Order_konsultasiController@destroy');
+Route::get('order_konsultasi/{user_id}/', 'Order_konsultasiController@show');
 
 Route::get('keterangan', 'Keterangan_iksController@index');
 Route::post('keterangan', 'Keterangan_iksController@store');
