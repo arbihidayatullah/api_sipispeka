@@ -26,8 +26,8 @@ class Iks extends Model
         return $this->hasMany(Nilai::class);
     }
 
-    public function pelayanan()
-    {
-        return $this->hasMany(Pelayanan::class);
-    }
+    // public function pelayanan()
+    // {
+    //     return $this->hasMany(Pelayanan::class);
+    // }
 }

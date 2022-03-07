@@ -85,6 +85,9 @@ class JadwalController extends Controller
     public function show($id)
     {
         //
+        $tanggal_mulai = Jadwal::where();
+        $tanggal_sekarang = date("Y-m-d");
+        $tanggal_selesai = Jadwal::where();
     }
 
     /**
