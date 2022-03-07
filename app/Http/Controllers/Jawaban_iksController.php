@@ -39,20 +39,17 @@ class Jawaban_iksController extends Controller
             'jawaban' => 'required',
             'soal_iks_id' => 'required',
             'iks_id' => 'required',
-            'pelayanan_id' => 'required',
 
         ]);
 
         $jawaban = $request->input('jawaban');
         $soal_iks_id = $request->input('soal_iks_id');
         $iks_id = $request->input('iks_id');
-        $pelayanan_id = $request->input('iks_id');
 
         $jawaban_iks = new Jawaban_iks([
             'jawaban' => $jawaban,
             'soal_iks_id' => $soal_iks_id,
             'iks_id' => $iks_id,
-            'pelayanan_id' => $pelayanan_id,
 
         ]);
         $jawaban_iks->save();

@@ -13,14 +13,17 @@ class Keterangan_iksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($user_id)
     {
-        //
-        $keterangan = Keterangan_iks::all();
+        $keterangan = Keterangan_iks::whereHas('nilai', function ($query) use ($user_id) {
+            $query->whereHas('iks', function ($query) use ($user_id) {
+                $query->where('user_id', '=', $user_id);
+            });
+        })->get();
 
         return response()->json([
             'status' => 'success',
-            'message' => 'list data keterangan iks',
+            'message' => 'data keterangan iks',
             'data' => $keterangan
         ]);
     }
