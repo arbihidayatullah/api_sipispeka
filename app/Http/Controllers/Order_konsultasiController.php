@@ -78,7 +78,7 @@ class Order_konsultasiController extends Controller
     public function show($user_id)
     {
 
-        $order_k = Order_konsultasi::where('user_id', $user_id->id)->get();
+        $order_k = Order_konsultasi::where('user_id', $user_id)->get();
 
         return response()->json([
             'success' => true,

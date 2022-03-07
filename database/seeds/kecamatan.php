@@ -67,6 +67,10 @@ class kecamatan extends Seeder
             'kabupaten_id' => 1
         ]);
         DB::table('kecamatans')->insert([
+            'nama_kecamatan' => 'Tanjung Karang Pusat',
+            'kabupaten_id' => 1
+        ]);
+        DB::table('kecamatans')->insert([
             'nama_kecamatan' => 'Tanjung Karang Timur',
             'kabupaten_id' => 1
         ]);

@@ -19,7 +19,8 @@ class User extends Model
         'nowa',
         'password',
         'role_id',
-        'desa_id'
+        'desa_id',
+        'status'
 
     ];
 

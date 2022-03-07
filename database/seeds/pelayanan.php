@@ -15,62 +15,62 @@ class pelayanan extends Seeder
         //
         DB::table('pelayanans')->insert([
             'nama' => 'Keluarga Berencana',
-            'gambar' => '',
+            'gambar' => 'images/KeluargaBerencana.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'Ibu Hamil',
-            'gambar' => '',
+            'gambar' => 'images/IbuHamil.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'Imunisasi',
-            'gambar' => '',
+            'gambar' => 'images/Imunisasi.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'ASI Eksklusif',
-            'gambar' => '',
+            'gambar' => 'images/ASIEkslusif.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'TumBang Balita',
-            'gambar' => '',
+            'gambar' => 'images/TumbangBalita.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'TBC',
-            'gambar' => '',
+            'gambar' => 'images/TBC.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'Gangguan Jiwa',
-            'gambar' => '',
+            'gambar' => 'images/GangguanJiwa.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'Berhenti Merokok',
-            'gambar' => '',
+            'gambar' => 'images/BerhentiMerokok.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'JKN',
-            'gambar' => '',
+            'gambar' => 'images/JKN.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'Air Bersih',
-            'gambar' => '',
+            'gambar' => 'images/AirBersih.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'Jamban Sehat',
-            'gambar' => '',
+            'gambar' => 'images/JambanSehat.png',
             'iks_id' => 1,
         ]);
         DB::table('pelayanans')->insert([
             'nama' => 'Hipertensi',
-            'gambar' => '',
+            'gambar' => 'images/Hipertensi.png',
             'iks_id' => 1,
         ]);
     }
