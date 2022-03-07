@@ -20,6 +20,7 @@ class CreateJawabanIksTable extends Migration
             $table->foreign('soal_iks_id')->references('id')->on('soal_iks');
             $table->integer('iks_id')->unsigned();
             $table->foreign('iks_id')->references('id')->on('iks');
+
             $table->timestamps();
         });
     }

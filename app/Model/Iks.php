@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Iks extends Model
 {
     //
-    protected $with = ['user',];
+    protected $with = ['user', 'jawaban_iks'];
     // protected $with = ['user', 'jawaban_iks', 'nilai', 'pelayanan'];
     protected $fillable = ['user_id'];
 
@@ -26,8 +26,8 @@ class Iks extends Model
         return $this->hasMany(Nilai::class);
     }
 
-    public function pelayanan()
-    {
-        return $this->hasMany(Pelayanan::class);
-    }
+    // public function pelayanan()
+    // {
+    //     return $this->hasMany(Pelayanan::class);
+    // }
 }

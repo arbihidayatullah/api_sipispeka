@@ -12,10 +12,10 @@ class IksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($user_id)
     {
         //
-        $iks = Iks::all();
+        $iks = Iks::where('user_id', $user_id)->get()->last();
 
         return response()->json([
             'status' => 'success',

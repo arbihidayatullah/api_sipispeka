@@ -56,10 +56,11 @@ Route::get('order_konsultasi', 'Order_konsultasiController@index');
 Route::post('order_konsultasi', 'Order_konsultasiController@store');
 Route::post('order_konsultasi/{id}', 'Order_konsultasiController@update');
 Route::delete('order_konsultasi/{id?}', 'Order_konsultasiController@destroy');
+Route::get('order_konsultasi/{user_id}/', 'Order_konsultasiController@show');
 
 Route::get('keterangan', 'Keterangan_iksController@index');
 Route::post('keterangan', 'Keterangan_iksController@store');
-Route::post('keterangan/{id}', 'Keterangan_iksController@update');
+Route::post('keterangan/{nilai_id}', 'Keterangan_iksController@update');
 Route::delete('keterangan/{id?}', 'Keterangan_iksController@destroy');
 Route::get('keterangan_user/{user_id}', 'Keterangan_iksController@show');
 
@@ -73,7 +74,7 @@ Route::post('intervensi', 'IntervensiController@store');
 Route::post('intervensi/{id}', 'IntervensiController@update');
 Route::delete('intervensi/{id?}', 'IntervensiController@destroy');
 
-Route::get('iks', 'IksController@index');
+Route::get('iks/{user_id}', 'IksController@index');
 Route::post('iks', 'IksController@store');
 Route::post('iks/{id}', 'IksController@update');
 Route::delete('iks/{id?}', 'IksController@destroy');
@@ -85,7 +86,7 @@ Route::delete('iklan/{id?}', 'IklanController@destroy');
 
 Route::get('nilai', 'NilaiController@index');
 Route::post('nilai', 'NilaiController@store');
-Route::post('/nilai/{id}', 'NilaiController@update');
+Route::post('/nilai/{iks_id}', 'NilaiController@update');
 Route::delete('nilai/{id?}', 'NilaiController@destroy');
 
 Route::get('pengisian_iks', 'Pengisian_iksController@index');

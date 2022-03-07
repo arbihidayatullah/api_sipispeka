@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Pelayanan extends Model
 {
     //
-    protected $with = ['iks', 'order_konsultasi'];
-    protected $fillable = ['nama', 'gambar', 'iks_id'];
+    // protected $with = ['soal_iks'];
+    protected $fillable = ['nama', 'gambar'];
 
     public function order_konsultasi()
     {
         return $this->hasMany(Order_konsultasi::class);
     }
 
-    public function iks()
+    public function soal_iks()
     {
-        return $this->belongsTo(Iks::class);
+        return $this->hasMany(Soal_iks::class);
     }
 }

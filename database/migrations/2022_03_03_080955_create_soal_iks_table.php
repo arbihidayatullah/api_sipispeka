@@ -16,6 +16,8 @@ class CreateSoalIksTable extends Migration
         Schema::create('soal_iks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('soal');
+            $table->integer('pelayanan_id')->unsigned();
+            $table->foreign('pelayanan_id')->references('id')->on('pelayanans');
             $table->timestamps();
         });
     }

@@ -42,6 +42,7 @@ class AuthController extends Controller
                 'nohp' => 'required',
                 'nowa' => 'required',
                 'password' => 'required|min:6',
+                'status' => 'required',
                 'role_id' => 'required',
                 'desa_id' => 'required'
             ]);
@@ -59,6 +60,7 @@ class AuthController extends Controller
                 $user->nohp = $request->nohp;
                 $user->nowa = $request->nowa;
                 $user->password = Hash::make($request->password, ['rounds' => 12]);
+                $user->status = $request->status;
                 $user->role_id = $request->role_id;
                 $user->desa_id = $request->desa_id;
                 $user->save();
@@ -102,6 +104,7 @@ class AuthController extends Controller
                         "nohp" => $row->nohp,
                         "nowa" => $row->nowa,
                         "password" => $row->password,
+                        "status" => $row->status,
                         "role_id" => $row->role_id,
                         "desa_id" => $row->desa_id,
 

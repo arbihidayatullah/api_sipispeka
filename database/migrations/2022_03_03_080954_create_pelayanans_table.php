@@ -17,8 +17,8 @@ class CreatePelayanansTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->string('gambar');
-            $table->integer('iks_id')->unsigned();
-            $table->foreign('iks_id')->references('id')->on('iks');
+            // $table->integer('iks_id')->unsigned();
+            // $table->foreign('iks_id')->references('id')->on('iks');
             $table->timestamps();
         });
     }

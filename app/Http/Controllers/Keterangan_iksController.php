@@ -109,25 +109,21 @@ class Keterangan_iksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $nilai_id)
     {
         //
         $keterangan_iks = Keterangan_iks::make($request->all(), [
             'keterangan' => 'required',
             'warna' => 'required',
-            'nilai_id' => 'required',
-
-
         ]);
 
-        $keterangan_iks = Keterangan_iks::find($id);
-        $keterangan_iks->update([
+        $keterangan_iks = Keterangan_iks::where('nilai_id', $nilai_id)->get();
+        $keterangan_iks[0]->update([
             'keterangan' => $request->input('keterangan'),
             'warna' => $request->input('warna'),
-            'nilai_id' => $request->input('nilai_id'),
 
         ]);
-        $keterangan_iks->save();
+        $keterangan_iks[0]->save();
 
         if ($keterangan_iks) {
             return response()->json([
