@@ -74,7 +74,7 @@ Route::post('intervensi', 'IntervensiController@store');
 Route::post('intervensi/{id}', 'IntervensiController@update');
 Route::delete('intervensi/{id?}', 'IntervensiController@destroy');
 
-Route::get('iks', 'IksController@index');
+Route::get('iks/{user_id}', 'IksController@index');
 Route::post('iks', 'IksController@store');
 Route::post('iks/{id}', 'IksController@update');
 Route::delete('iks/{id?}', 'IksController@destroy');
