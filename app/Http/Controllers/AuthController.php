@@ -223,7 +223,13 @@ class AuthController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'list data user',
+            'data' => $user
+        ]);
     }
 
     /**

@@ -24,6 +24,7 @@ Route::post('register', 'AuthController@register');
 Route::post('adduser', 'AuthController@store');
 Route::post('status', 'AuthController@status');
 Route::post('status/{id}', 'AuthController@barudaftar');
+Route::get('user/{id}', 'AuthController@show');
 
 
 Route::get('soal_iks', 'Soal_iksController@index');
@@ -66,11 +67,11 @@ Route::post('keterangan/{nilai_id}', 'Keterangan_iksController@update');
 Route::delete('keterangan/{id?}', 'Keterangan_iksController@destroy');
 Route::get('keterangan_user/{user_id}', 'Keterangan_iksController@show');
 
-Route::get('jadwal', 'JadwalController@index');
+// Route::get('jadwal', 'JadwalController@index');
 Route::post('jadwal', 'JadwalController@store');
 Route::post('jadwal/{id}', 'JadwalController@update');
 Route::delete('jadwal/{id?}', 'JadwalController@destroy');
-Route::get('jadwal/{id}', 'JadwalController@show');
+Route::get('jadwal', 'JadwalController@show');
 
 Route::get('intervensi', 'IntervensiController@index');
 Route::post('intervensi', 'IntervensiController@store');

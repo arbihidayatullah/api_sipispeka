@@ -15,7 +15,7 @@ class CreateOrderKonsultasisTable extends Migration
     {
         Schema::create('order_konsultasis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('keluhan');
+            $table->text('keluhan');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('pelayanan_id')->unsigned();
