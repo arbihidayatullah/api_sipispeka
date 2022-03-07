@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Model\Jadwal;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 
 class JadwalController extends Controller
 {
@@ -16,6 +18,7 @@ class JadwalController extends Controller
     {
         //
         $jadwal = Jadwal::all();
+
 
         return response()->json([
             'status' => 'success',
@@ -85,10 +88,16 @@ class JadwalController extends Controller
     public function show($id)
     {
         //
-        $tanggal_mulai = Jadwal::where();
-        $tanggal_sekarang = date("Y-m-d");
-        $tanggal_selesai = Jadwal::where();
+        $tanggal_sekarang = Carbon::now();
+        // dd($tanggal_sekarang);
+        $jadwal = Jadwal::where('tanggal_mulai', '>=', $tanggal_sekarang)->orWhere('tanggal_selesai', '>=', $tanggal_sekarang)->get();
+
+        return response()->json([
+            'status' => 'data berhasil',
+            'data' => $jadwal
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

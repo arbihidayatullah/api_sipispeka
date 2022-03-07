@@ -188,8 +188,31 @@ class AuthController extends Controller
     }
 
 
-    public function signin(Request $request)
+    public function barudaftar(Request $request, $id)
     {
+        $status = User::find($id);
+
+        $status->update(['status' => $request->input('status')]);
+        $status->save();
+
+
+        return response()->json([
+            'value' => 'status berhasil diubah',
+            'data' => $status
+        ]);
+    }
+    public function status(Request $request)
+    {
+        $status = User::all();
+        foreach ($status as $s) {
+            $s->update(['status' => $request->input('status')]);
+            $s->save();
+        }
+
+        return response()->json([
+            'value' => 'status berhasil diubah',
+            'data' => $status
+        ]);
     }
 
     /**

@@ -55,7 +55,7 @@ class IklanController extends Controller
 
         // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('gambar');
-        $nama_file = time() . "_" . $file->getClientOriginalName();
+        $nama_file = "images/" . time() . "_" . $file->getClientOriginalName();
 
         // isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'images';
