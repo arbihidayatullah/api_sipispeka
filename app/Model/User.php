@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     //
-    protected $with = ['role', 'desa', 'order_konsultasi'];
+    protected $with = ['role', 'desa'];
     protected $fillable = [
         'nama',
         'nik',
