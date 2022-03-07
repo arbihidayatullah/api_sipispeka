@@ -22,6 +22,8 @@ Route::get('user', 'AuthController@index');
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
 Route::post('adduser', 'AuthController@store');
+Route::post('status', 'AuthController@status');
+Route::post('status/{id}', 'AuthController@barudaftar');
 
 
 Route::get('soal_iks', 'Soal_iksController@index');
@@ -68,6 +70,7 @@ Route::get('jadwal', 'JadwalController@index');
 Route::post('jadwal', 'JadwalController@store');
 Route::post('jadwal/{id}', 'JadwalController@update');
 Route::delete('jadwal/{id?}', 'JadwalController@destroy');
+Route::get('jadwal/{id}', 'JadwalController@show');
 
 Route::get('intervensi', 'IntervensiController@index');
 Route::post('intervensi', 'IntervensiController@store');

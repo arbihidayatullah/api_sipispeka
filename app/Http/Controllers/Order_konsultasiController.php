@@ -47,18 +47,18 @@ class Order_konsultasiController extends Controller
         //
         $this->validate($request, [
             'keluhan' => 'required',
-            'users_id' => 'required',
-            'pelayanans_id' => 'required'
+            'user_id' => 'required',
+            'pelayanan_id' => 'required'
         ]);
 
         $keluhan = $request->input('keluhan');
-        $users_id = $request->input('users_id');
-        $pelayanans_id = $request->input('pelayanans_id');
+        $users_id = $request->input('user_id');
+        $pelayanans_id = $request->input('pelayanan_id');
 
         $order_k = new Order_konsultasi([
             'keluhan' => $keluhan,
-            'users_id' => $users_id,
-            'pelayanans_id' => $pelayanans_id,
+            'user_id' => $users_id,
+            'pelayanan_id' => $pelayanans_id,
         ]);
         $order_k->save();
 
