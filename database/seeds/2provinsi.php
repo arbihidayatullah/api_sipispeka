@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class provinsi extends Seeder
+class provinksi extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,11 +12,9 @@ class provinsi extends Seeder
      */
     public function run()
     {
-        
-            //
-            DB::table('provinsis')->insert([
-                'nama_provinsi' => 'Lampung',
-            ]);
-        
+        //
+        DB::table('provinsis')->insert([
+            'nama_provinsi' => 'Lampung',
+        ]);
     }
 }

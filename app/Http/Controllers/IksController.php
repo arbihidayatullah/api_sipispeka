@@ -24,6 +24,18 @@ class IksController extends Controller
         ]);
     }
 
+    public function showAll()
+    {
+        //
+        $iks = Iks::all();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'list data iks',
+            'data' => $iks
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

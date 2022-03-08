@@ -22,7 +22,7 @@ class user extends Seeder
             'nohp' => '0909877878',
             'nowa' => '0810101010',
             'password' => '123456789',
-            'status' => 'false',
+            'status' => false,
             'role_id' => 1,
             'desa_id' => 1
         ]);
