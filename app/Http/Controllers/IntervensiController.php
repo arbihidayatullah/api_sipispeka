@@ -12,10 +12,10 @@ class IntervensiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($order_konsultasi_id)
     {
         //
-        $intervensi = Intervensi::all();
+        $intervensi = Intervensi::where('order_konsultasi_id', $order_konsultasi_id)->get();
 
         return response()->json([
             'status' => 'success',

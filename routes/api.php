@@ -73,7 +73,7 @@ Route::post('jadwal/{id}', 'JadwalController@update');
 Route::delete('jadwal/{id?}', 'JadwalController@destroy');
 Route::get('jadwal', 'JadwalController@show');
 
-Route::get('intervensi', 'IntervensiController@index');
+Route::get('intervensi/{order_konsultasi_id}', 'IntervensiController@index');
 Route::post('intervensi', 'IntervensiController@store');
 Route::post('intervensi/{id}', 'IntervensiController@update');
 Route::delete('intervensi/{id?}', 'IntervensiController@destroy');
