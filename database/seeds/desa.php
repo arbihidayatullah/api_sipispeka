@@ -519,5 +519,561 @@ class desa extends Seeder
             'nama_desa' => 'Way Halim Permai',
             'kecamatan_id' => 20
         ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Gunung Terang',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Manggarai',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Rigis Jaya',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Semarang Jaya',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sidodadi',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sinar Jaya',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sri Menanti',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Damai',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Jadi',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sumber Alam',
+            'kecamatan_id' => 21
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bahway',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Gunung Sugih',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kubu Perang',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Padang Cahaya',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Padang Dalom',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pasar Liwa',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sebarus',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sedampah Indah',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukarame',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Wates (Watas)',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Way Empulau Ulu',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Way Mengaku',
+            'kecamatan_id' => 22
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bandar Agung',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bumi Hantatai',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'GunungRatu (Gunung Ratu)',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Negeri Jaya',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Ringin Jaya',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Srimulyo',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suoh',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tanjungsari',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tembelang',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tri Mekar Jaya',
+            'kecamatan_id' => 23
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Canggu',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Gunung Sugih',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kegeringan',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kembahang',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kerang',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kota Besi',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Negeri Batu',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pekon Balak',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukabumi',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukaraja',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Teba Liyokh',
+            'kecamatan_id' => 24
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Argomulyo (Argo Mulyo)',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Atar Bawang',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Atar Kuwau',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bakhu',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Batu Kebayan',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Campang Tiga',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kubu Liku Jaya',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Luas',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sumber Rejo',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Way Ngison',
+            'kecamatan_id' => 25
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bedudu',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bumi Agung',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Fajar Agung',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Hujung',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kejadian',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Kenali',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Serungkuk',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Makmur',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukarame',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Turgak',
+            'kecamatan_id' => 26
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Cipta Waras',
+            'kecamatan_id' => 27
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Gedung Surian',
+            'kecamatan_id' => 27
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Mekar Jaya',
+            'kecamatan_id' => 27
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pura Mekar',
+            'kecamatan_id' => 27
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tri Mulyo',
+            'kecamatan_id' => 27
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Cipta Mulya',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Muara Baru',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Muara Jaya Dua (II)',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Muara Jaya Satu (I)',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pura Jaya',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pura Wiwitan',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sinar Luas',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tribudi Makmur',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tribudi Syukur',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tugu Mulya',
+            'kecamatan_id' => 28
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Heni Arong',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Keagungan',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Lombok',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Lombok Selatan',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Lombok Timur',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pancur Mas',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Banjar',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Banjar II Ujung Rembun',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Maju',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tawan Suka Mulya',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Ujung',
+            'kecamatan_id' => 29
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Basungan',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Batu Api',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Marga Jaya',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Mekar Sari',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pagar Dewa',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pahayu Jaya',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sidodadi',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sidomulyo',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Jaya',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Mulya',
+            'kecamatan_id' => 30
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Giham Sukamaju',
+            'kecamatan_id' => 31
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pampangan',
+            'kecamatan_id' => 31
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tiga Jaya',
+            'kecamatan_id' => 31
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Waspada',
+            'kecamatan_id' => 31
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sekincau',
+            'kecamatan_id' => 31
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bandar Baru',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Buay Nyerupa',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Bumi Jaya',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Hanakau',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Jaga Raga',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pagar Dewa',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Mulya',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tanjung Raya',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tapak Siring',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Teba Pering Raya',
+            'kecamatan_id' => 32
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Simpang Sari',
+            'kecamatan_id' => 33
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sindang Pagar',
+            'kecamatan_id' => 33
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukajaya',
+            'kecamatan_id' => 33
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Suka Pura',
+            'kecamatan_id' => 33
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Way Petai',
+            'kecamatan_id' => 33
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tugu Sari',
+            'kecamatan_id' => 33
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Banding Agung',
+            'kecamatan_id' => 34
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Ringin Sari',
+            'kecamatan_id' => 34
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Rowo Rejo',
+            'kecamatan_id' => 34
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sidorejo',
+            'kecamatan_id' => 34
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukamarga',
+            'kecamatan_id' => 34
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sumber Agung',
+            'kecamatan_id' => 34
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tuguratu',
+            'kecamatan_id' => 34
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Karang Agung',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Mutar Alam',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Padang Tambak',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Puralaksana',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukananti',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Sukaraja',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tambak Jaya',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Tanjung Raya',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => 'Pajar Bulan',
+            'kecamatan_id' => 35
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => '',
+            'kecamatan_id' => 36
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => '',
+            'kecamatan_id' => 36
+        ]);
+        DB::table('desas')->insert([
+            'nama_desa' => '',
+            'kecamatan_id' => 36
+        ]);
     }
 }
