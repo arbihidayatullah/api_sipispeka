@@ -119,3 +119,8 @@ Route::get('desa', 'DesaController@index');
 Route::post('desa', 'DesaController@store');
 Route::post('/desa/{id}', 'DesaController@update');
 Route::delete('desa/{id?}', 'DesaController@destroy');
+
+Route::get('request_id', 'Request_iksController@index');
+Route::post('request_id', 'Request_iksController@store');
+Route::delete('request_id/{id}', 'Request_iksController@destroy');
+Route::get('request_id/{user_id}', 'Request_iksController@show');

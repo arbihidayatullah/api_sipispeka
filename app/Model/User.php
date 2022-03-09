@@ -38,4 +38,8 @@ class User extends Model
     {
         return $this->hasMany(Order_konsultasi::class);
     }
+    public function request_iks()
+    {
+        return $this->hasMany(Request_iks::class);
+    }
 }
