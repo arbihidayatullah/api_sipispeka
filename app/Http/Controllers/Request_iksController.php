@@ -72,6 +72,14 @@ class Request_iksController extends Controller
     public function show($id)
     {
         //
+        $request_iks = Request_iks::find($id);
+
+        return response()->json([
+            'status' => 'Succes',
+            'message' => 'request iks user',
+            'data' => $request_iks
+
+        ]);
     }
 
     /**
