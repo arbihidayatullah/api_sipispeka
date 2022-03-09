@@ -46,17 +46,17 @@ class IntervensiController extends Controller
         $this->validate($request, [
             'intervensi' => 'required',
             'keterangan' => 'required',
-            'order_konsultasis_id' => 'required'
+            'order_konsultasi_id' => 'required'
         ]);
 
         $intervensi = $request->input('intervensi');
         $keterangan = $request->input('keterangan');
-        $order_konsultasis_id = $request->input('order_konsultasis_id');
+        $order_konsultasi_id = $request->input('order_konsultasi_id');
 
         $intervensip = new Intervensi([
             'intervensi' => $intervensi,
             'keterangan' => $keterangan,
-            'order_konsultasis_id' => $order_konsultasis_id,
+            'order_konsultasi_id' => $order_konsultasi_id,
         ]);
         $intervensip->save();
 

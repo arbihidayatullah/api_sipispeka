@@ -28,6 +28,17 @@ class Keterangan_iksController extends Controller
         ]);
     }
 
+
+    public function showAll()
+    {
+        $keterangan = Keterangan_iks::all();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'data keterangan iks',
+            'data' => $keterangan
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

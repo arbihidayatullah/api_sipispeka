@@ -62,6 +62,7 @@ Route::delete('order_konsultasi/{id?}', 'Order_konsultasiController@destroy');
 Route::get('order_konsultasi/{user_id}/', 'Order_konsultasiController@show');
 
 Route::get('keterangan/{user_id}', 'Keterangan_iksController@index');
+Route::get('keterangan', 'Keterangan_iksController@showAll');
 Route::post('keterangan', 'Keterangan_iksController@store');
 Route::post('keterangan/{nilai_id}', 'Keterangan_iksController@update');
 Route::delete('keterangan/{id?}', 'Keterangan_iksController@destroy');
