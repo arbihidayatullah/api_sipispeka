@@ -69,10 +69,10 @@ class Request_iksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
         //
-        $request_iks = Request_iks::find($id);
+        $request_iks = Request_iks::where('user_id', $user_id)->get();
 
         return response()->json([
             'status' => 'Succes',
