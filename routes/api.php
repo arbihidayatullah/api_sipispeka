@@ -124,3 +124,13 @@ Route::get('request_id', 'Request_iksController@index');
 Route::post('request_id', 'Request_iksController@store');
 Route::delete('request_id/{id}', 'Request_iksController@destroy');
 Route::get('request_id/{user_id}', 'Request_iksController@show');
+
+Route::get('opsi_alamat', 'Opsi_alamatController@index');
+Route::post('opsi_alamat', 'Opsi_alamatController@store');
+Route::delete('opsi_alamat/{id}', 'Opsi_alamatController@destroy');
+Route::get('opsi_alamat/{user_id}', 'Opsi_alamatController@show');
+
+Route::get('penguncian_jawaban', 'Penguncian_jawabanController@index');
+Route::post('penguncian_jawaban', 'Penguncian_jawabanController@store');
+Route::post('/penguncian_jawaban/{id}', 'Penguncian_jawabanController@update');
+Route::delete('penguncian_jawaban/{id}', 'Penguncian_jawabanController@destroy');

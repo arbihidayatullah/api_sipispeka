@@ -21,4 +21,8 @@ class Kecamatan extends Model
     {
         return $this->belongsTo(Kabupaten::class);
     }
+    public function opsi_alamat()
+    {
+        return $this->hasMany(Opsi_alamat::class);
+    }
 }
