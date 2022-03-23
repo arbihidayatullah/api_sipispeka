@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Opsi_alamat;
 use Illuminate\Http\Request;
 
 class Opsi_alamatController extends Controller
@@ -14,6 +15,13 @@ class Opsi_alamatController extends Controller
     public function index()
     {
         //
+        $o_alamat = Opsi_alamat::all();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'list opsi alamat berhasil',
+            'data' => $o_alamat
+        ]);
     }
 
     /**
@@ -35,6 +43,25 @@ class Opsi_alamatController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'status' => 'required',
+            'kecamatan_id' => 'required'
+        ]);
+
+        $status = $request->input('status');
+        $kecamatan_id = $request->input('kecamatan_id');
+
+        $o_alamat = new Opsi_alamat([
+            'status' => $status,
+            'kecamatan_id' => $kecamatan_id,
+        ]);
+        $o_alamat->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'input data opsi alamat',
+            'jawaban' => $o_alamat
+        ]);
     }
 
     /**
@@ -43,9 +70,17 @@ class Opsi_alamatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($kecamatan_id)
     {
         //
+        $o_alamat = Opsi_alamat::where('kecamatan_id', $kecamatan_id)->get();
+
+        return response()->json([
+            'status' => 'Succes',
+            'message' => 'opsi alamat kota bumi selatan',
+            'data' => $o_alamat
+
+        ]);
     }
 
     /**
@@ -69,6 +104,30 @@ class Opsi_alamatController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $o_alamat = Opsi_alamat::make($request->all(), [
+            'status' => 'required',
+            'kecamatan_id' => 'required'
+
+        ]);
+
+        $o_alamat = Opsi_alamat::find($id);
+        $o_alamat->update([
+            'status' => $request->input('status'),
+            'kecamatan_id' => $request->input('kecamatan_id'),
+        ]);
+        $o_alamat->save();
+
+        if ($o_alamat) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Opsi Alamat Berhasil Diupdate!',
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Opsi Alamat Gagal Diupdate!',
+            ], 401);
+        }
     }
 
     /**
@@ -80,5 +139,19 @@ class Opsi_alamatController extends Controller
     public function destroy($id)
     {
         //
+        $o_alamat = Opsi_alamat::findOrFail($id);
+        $o_alamat->delete();
+
+        if ($o_alamat) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Opsi Alamat Berhasil Dihapus!',
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Opsi Alamat Gagal Dihapus!',
+            ], 400);
+        }
     }
 }

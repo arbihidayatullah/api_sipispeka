@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Opsi_alamat extends Model
 {
     //
+    protected $with = ['kecamatan'];
     protected $fillable = ['status', 'kecamatan_id'];
 
     public function kecamatan()
