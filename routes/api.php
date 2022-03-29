@@ -116,6 +116,7 @@ Route::post('/kecamatan/{id}', 'KecamatanController@update');
 Route::delete('kecamatan/{id?}', 'KecamatanController@destroy');
 
 Route::get('desa', 'DesaController@index');
+Route::get('desa/{id}', 'DesaController@show');
 Route::post('desa', 'DesaController@store');
 Route::post('/desa/{id}', 'DesaController@update');
 Route::delete('desa/{id?}', 'DesaController@destroy');

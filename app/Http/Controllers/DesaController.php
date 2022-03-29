@@ -72,7 +72,13 @@ class DesaController extends Controller
      */
     public function show($id)
     {
-        //
+        $desa = Desa::where('kecamatan_id', $id)->get();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'list data kabupaten',
+            'data' => $desa
+        ]);
     }
 
     /**
