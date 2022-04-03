@@ -136,3 +136,5 @@ Route::get('penguncian_jawaban', 'Penguncian_jawabanController@index');
 Route::post('penguncian_jawaban', 'Penguncian_jawabanController@store');
 Route::post('/penguncian_jawaban/{id}', 'Penguncian_jawabanController@update');
 Route::delete('penguncian_jawaban/{id}', 'Penguncian_jawabanController@destroy');
+
+Route::get('notifikasi_jadwal', 'Notifikasi_Controller@sendMessage');
