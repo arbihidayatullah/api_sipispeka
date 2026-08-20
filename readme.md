@@ -1,58 +1,134 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# 🏥 SIPISPeKa API
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+  <strong>Telehealth Application for Supporting Family Health Monitoring</strong>
 </p>
 
-## About Laravel
+<p align="center">
+  🏥 Telehealth • 💻 Web Application • 👨‍👩‍👧‍👦 Family Health • 📊 PIS-PK
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📌 About SIPISPeKa
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+**SIPISPeKa** is a telehealth-based application developed to support family health monitoring and communication.
 
-## Learning Laravel
+The application is designed to provide health information and services that are more accessible, user-friendly, and relevant to families, particularly those with a **low Healthy Family Index (IKS)**.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+This repository contains the **backend/API** of the SIPISPeKa application.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🎯 Project Objective
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+SIPISPeKa aims to improve access to health services by utilizing web-based technology as a supporting medium for communication and interaction between health services and families.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+The system is expected to help make health services:
 
-## Contributing
+* 🏥 More accessible
+* 📱 Easier to use
+* 💬 More interactive
+* 👨‍👩‍👧‍👦 More relevant to family health needs
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Security Vulnerabilities
+## ✅ Telehealth Assessment
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+SIPISPeKa was assessed as **feasible as a telehealth medium** based on four main aspects:
 
-## License
+| Aspect                         | Description                                                       |
+| ------------------------------ | ----------------------------------------------------------------- |
+| 🏥 Telehealth Media Principles | Compliance with telehealth media principles                       |
+| ⚙️ Governance                  | System and service management                                     |
+| 💬 Web-Based Communication     | Digital communication and interaction                             |
+| 🎯 PIS-PK Relevance            | Relevance to the Healthy Indonesia Program with a Family Approach |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🔄 System Concept
+
+```text
+        👨‍👩‍👧‍👦 Families
+                │
+                ▼
+        ┌───────────────┐
+        │   SIPISPeKa   │
+        │  Web Platform │
+        └───────┬───────┘
+                │
+                ▼
+        ┌───────────────┐
+        │   REST API    │
+        │   Backend     │
+        └───────┬───────┘
+                │
+                ▼
+        🏥 Health Services
+```
+
+The API acts as the backend layer that supports communication, data processing, and integration within the SIPISPeKa application.
+
+---
+
+## 💡 Key Improvement Direction
+
+Based on assessor feedback, future development should focus on making SIPISPeKa:
+
+* ✨ More user-friendly
+* 🖱️ Easier to navigate and use
+* 📱 More accessible for families
+* 🤝 Better able to support interactions that complement the role of health workers
+* 🎯 More effective for families with low IKS scores
+
+---
+
+## 🛠️ Project Focus
+
+```text
+SIPISPeKa
+│
+├── 🏥 Telehealth
+├── 💬 Web-Based Communication
+├── 👨‍👩‍👧‍👦 Family Health Support
+├── 📊 PIS-PK Relevance
+└── ⚙️ Backend API
+```
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/arbihidayatullah/api_sipispeka.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd api_sipispeka
+```
+
+Then configure the application environment and dependencies according to the project implementation.
+
+---
+
+## 👨‍💻 Author
+
+**Arbi Hidayatullah**
+
+AI • Computer Vision • Data • Python
+
+<p>
+  <a href="https://github.com/arbihidayatullah">GitHub</a>
+  &nbsp; • &nbsp;
+  <a href="https://www.linkedin.com/in/arbi-hidayatullah/">LinkedIn</a>
+</p>
+
+---
+
+<p align="center">
+  <i>Technology supporting accessible and family-centered health services. 🏥</i>
+</p>
